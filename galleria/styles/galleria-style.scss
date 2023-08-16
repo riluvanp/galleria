@@ -1101,6 +1101,8 @@ footer {
     margin-bottom: 200px;
     .gr-media-center-view {
         margin-bottom: 80px;
+        position: relative;
+        z-index: 2;
         h2 {
             margin-bottom: 22px;
         }
@@ -1371,6 +1373,14 @@ p {
 #sticky-phantom {
     width: 250px;
 }
+#sticky-heading,
+#sticky-phantom-heading {
+    width: 100%;
+}
+
+#sticky-phantom-heading {
+    display: none;
+}
 
 #sticky-phantom {
     display: none;
@@ -1378,11 +1388,26 @@ p {
 
 #sticky.stick {
     position: fixed;
-    top: 0;
+    top: 220px;
     width: 250px;
+}
+
+#sticky-heading.stick-heading {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: white;
 }
 // gr-filter-section
 
+// gr-about-content-image
+.gr-about-content-image {
+    background: #000000 0% 0% no-repeat padding-box;
+    opacity: 0.05;
+    height: 506px;
+    margin-top: -460px;
+}
+// gr-about-content-image
 @media (min-width: 1279px) {
     // Fun Component
     .gr-fun-component {
@@ -1841,7 +1866,7 @@ p {
                 outline: unset;
                 box-shadow: unset;
             }
-            &:focus{
+            &:focus {
                 border: unset;
                 outline: unset;
                 box-shadow: unset;
@@ -2199,19 +2224,6 @@ p {
             }
         }
     }
-    .gr-store-box {
-        background: transparent;
-        padding: unset;
-        width: 100%;
-        div {
-            padding: 0px;
-        }
-        a {
-            background: white !important;
-            color: #000000 !important;
-            width: 100%;
-        }
-    }
     // gr-store-banner-component
     .gr-store-banner-component {
         height: 658px;
@@ -2223,10 +2235,23 @@ p {
             width: 100%;
             padding: 0px 27px 58px;
             div {
-                width: 100%;
+                width: 100% !important;
             }
             h1 {
                 margin-bottom: 20px;
+            }
+        }
+        .gr-store-box {
+            background: transparent;
+            padding: unset;
+            width: 100%;
+            div {
+                padding: 0px;
+            }
+            a {
+                background: white !important;
+                color: #000000 !important;
+                width: 100%;
             }
         }
     }
@@ -2242,6 +2267,19 @@ p {
         .description {
             font-size: 14px !important;
             line-height: 17px !important;
+        }
+        .gr-store-box {
+            width: 100%;
+            margin-top: 20px;
+            padding: 30px 20px;
+            a {
+                background: #000000 !important;
+                color: white !important;
+                &.btn-secondary {
+                    background: #ffffff !important;
+                    color: #000000 !important;
+                }
+            }
         }
     }
 
@@ -2315,8 +2353,16 @@ p {
         }
     }
     #sticky,
-    #sticky-phantom {
+    #sticky-phantom,
+    #sticky-heading,
+    #sticky-phantom-heading {
         width: 100%;
+    }
+    #sticky.stick {
+        top: 104px;
+        left: 8px;
+        width: calc(100% - 15px);
+        background: white;
     }
     // gr-filter-section
 
@@ -2330,5 +2376,9 @@ p {
                 }
             }
         }
+    }
+
+    .gr-event-offer-description {
+        
     }
 }

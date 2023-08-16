@@ -988,6 +988,8 @@ footer .margin_top_70 {
 }
 .gr-media-center-image-content .gr-media-center-view {
   margin-bottom: 80px;
+  position: relative;
+  z-index: 2;
 }
 .gr-media-center-image-content .gr-media-center-view h2 {
   margin-bottom: 22px;
@@ -1208,14 +1210,37 @@ p {
   width: 250px;
 }
 
+#sticky-heading,
+#sticky-phantom-heading {
+  width: 100%;
+}
+
+#sticky-phantom-heading {
+  display: none;
+}
+
 #sticky-phantom {
   display: none;
 }
 
 #sticky.stick {
   position: fixed;
-  top: 0;
+  top: 220px;
   width: 250px;
+}
+
+#sticky-heading.stick-heading {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+}
+
+.gr-about-content-image {
+  background: #000000 0% 0% no-repeat padding-box;
+  opacity: 0.05;
+  height: 506px;
+  margin-top: -460px;
 }
 
 @media (min-width: 1279px) {
@@ -1858,19 +1883,6 @@ p {
     background-color: #000000 !important;
     height: 3px !important;
   }
-  .gr-store-box {
-    background: transparent;
-    padding: unset;
-    width: 100%;
-  }
-  .gr-store-box div {
-    padding: 0px;
-  }
-  .gr-store-box a {
-    background: white !important;
-    color: #000000 !important;
-    width: 100%;
-  }
   .gr-store-banner-component {
     height: 658px;
   }
@@ -1883,10 +1895,23 @@ p {
     padding: 0px 27px 58px;
   }
   .gr-store-banner-component .gr-store-banner-content div {
-    width: 100%;
+    width: 100% !important;
   }
   .gr-store-banner-component .gr-store-banner-content h1 {
     margin-bottom: 20px;
+  }
+  .gr-store-banner-component .gr-store-box {
+    background: transparent;
+    padding: unset;
+    width: 100%;
+  }
+  .gr-store-banner-component .gr-store-box div {
+    padding: 0px;
+  }
+  .gr-store-banner-component .gr-store-box a {
+    background: white !important;
+    color: #000000 !important;
+    width: 100%;
   }
   .gr-store-description-component {
     padding: 32px 10px 45px;
@@ -1899,6 +1924,19 @@ p {
   .gr-store-description-component .description {
     font-size: 14px !important;
     line-height: 17px !important;
+  }
+  .gr-store-description-component .gr-store-box {
+    width: 100%;
+    margin-top: 20px;
+    padding: 30px 20px;
+  }
+  .gr-store-description-component .gr-store-box a {
+    background: #000000 !important;
+    color: white !important;
+  }
+  .gr-store-description-component .gr-store-box a.btn-secondary {
+    background: #ffffff !important;
+    color: #000000 !important;
   }
   .gr-store-details-image-content {
     padding: 0px 10px;
@@ -1960,8 +1998,16 @@ p {
     display: none;
   }
   #sticky,
-  #sticky-phantom {
+  #sticky-phantom,
+  #sticky-heading,
+  #sticky-phantom-heading {
     width: 100%;
+  }
+  #sticky.stick {
+    top: 104px;
+    left: 8px;
+    width: calc(100% - 15px);
+    background: white;
   }
   .gr-dine-discover .gr-discover-component .gr-discover-content h1 {
     font-size: 40px !important;
